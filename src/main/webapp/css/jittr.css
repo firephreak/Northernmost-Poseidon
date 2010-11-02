@@ -1,7 +1,14 @@
+html,body {
+    width:100%;
+    margin:0px;
+}
+
 body {
-    background:#00547d url(../images/bg.jpg) repeat-x 0 0;
-    color:#ccc;
+    /*background-image: url('../images/Paper0007_M(blue).jpg');*/
+    background:#375F90;
+    color:#333;
     font:14px 'Lucida Grande', sans-serif;
+    height:100%;
 }
 
 a {
@@ -18,21 +25,62 @@ img {
 }
 
 #header {
-    margin-bottom:20px;
+    width:100%;
 }
 
 #container {
-    width:763px;
+    height:100%;
     margin:auto;
+    position:relative;
+    width:980px;
 }
 
 #content {
     overflow:auto;
+    width:100%;
+}
+
+#errormessage{
+    color:red;
+    font-weight:normal;
 }
 
 #footer {
     font-size:12px;
-    margin-top:20px;
+    /*background-image: url('../images/white_torn_footer.png');*/
+    /*background-repeat:repeat-x;*/
+    background:#FFFFFF;
+    position:fixed;
+    bottom:0px;
+    height:50px;
+    width:100%
+}
+
+#footer_info {
+    padding-top:10px;
+    width:100px;
+    padding-left:20px;
+}
+
+#instructions_login {
+    background: rgba(255,255,255,0.4);
+    color:#333;
+    font-weight:bold;
+    padding:5px;
+    width: 250px;
+    /*float:left;*/
+    -moz-border-radius:10px;            /*For firefox */
+    border-radius:10px;
+    height: 100%;
+}
+
+#logo {
+    /*float:left;    */
+}
+
+#title {
+    /*float:left;*/
+    margin-left:20px;
 }
 
 #tweet_form {
@@ -54,10 +102,45 @@ img {
     margin-top:10px;
 }
 
+.updates_info {
+    background: rgba(255,255,255,0.4);
+    width:625px;
+    /*float:left;*/
+    padding:5px;
+    font-weight:bold;
+    -moz-border-radius:10px;              /*For firefox */
+    border-radius:10px;
+}
+
+#passwordlabel {
+    margin-right:5px;
+}
+
 .command {
     font-family:courier, monospace;
     font-size:10px;
 }
+
+.textframe_left {
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    float:left;
+    -moz-border-radius:10px;               /*For firefox */
+    border-radius:10px;
+    margin-right:15px;
+    margin-bottom:5px;
+}
+
+.textframe_right {
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    float:right;
+    -moz-border-radius:10px;               /*For firefox */
+    border-radius:10px;
+    margin-right:15px;
+    margin-bottom:5px;
+}
+
 
 .status {
     margin:10px 0;

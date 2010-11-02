@@ -13,13 +13,19 @@
     <body>
         <div id="container">
             <div id="header">
-                <a href="<c:url value="/"/>"><img src="<c:url value="/images/jittr.jpg"/>"/></a>
+                <div id="logo">
+                    <img id="songcloud_top_logo" src="/images/songcloud256.png" height="170" />
+                </div>
+                <div id="title">STUFF</div>
             </div>
             <div id="content">
                 <jsp:invoke fragment="content"/>
             </div>
-            <div id="footer">
-                Rally + CU = <a href="http://www.rallyedu.net">RallyEDU.net</a>
+
+        </div>
+        <div id="footer">
+            <div id="footer_info">
+                    Cool info goes here.
             </div>
         </div>
     </body>
