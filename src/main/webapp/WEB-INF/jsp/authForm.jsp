@@ -5,7 +5,7 @@
     <jsp:attribute name="content">
         <div class="textframe_left">
         <div id="instructions_login" >
-            To use songCLOUD, please log into your DropBox account so we can get your music! <br /> <br />
+            To use SongCloud, please log into your DropBox account so we can get your music! <br /> <br />
 
             <!--
             <ol>
@@ -41,6 +41,20 @@
         </div>
         </div>
 
+ 
+            <div id="quick_description">
+                <span id="slogan_thing">Free Your Music.</span>
+            </div>
+
+
+        <div class="textframe_right">
+            <div id="11_02_10_2" class="updates_info">
+                <big>Online</big> <br />
+                <em>11/02/10</em> <br/> <br/>
+                Title says it all, we're up and running online. <br/> <br/>
+            </div>
+        </div>
+
         <div class="textframe_right">
             <div id="11_02_10" class="updates_info">
                 <big>Home Sweet Home</big> <br />
@@ -51,11 +65,22 @@
             </div>
         </div>
 
+        <div class="textframe_left">
+            <div id="navigation">
+                <ul>
+                    <a><li><em>Home</em></li></a> <br/> 
+                    <a><li><em>What is SongCloud?</em></li></a> <br/>
+                    <a><li><em>How Does it Work?</em></li></a> <br/>
+                    <a><li><em>About Us</em></li></a> 
+                </ul>
+            </div>
+        </div>
+
         <div class="textframe_right">
             <div id="testblock" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester-block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>
@@ -65,7 +90,7 @@
             <div id="testblock2" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester-block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>
@@ -75,7 +100,7 @@
             <div id="testblock3" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>
@@ -85,7 +110,7 @@
             <div id="testblock4" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>
@@ -95,7 +120,7 @@
             <div id="testblock5" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>
@@ -105,7 +130,7 @@
             <div id="testblock6" class="updates_info">
                 <big>Home Sweet Home</big> <br />
                 <em>11/02/10</em> <br/> <br/>
-                We finally have a homepage! <br/> <br/>
+                We finally have a homepage! (Tester block)<br/> <br/>
                 Granted, nothing is clickable yet, you can't log in, and you can't listen to a single song, but
                 hey, everybody's gotta start somewhere right?  Right.
             </div>

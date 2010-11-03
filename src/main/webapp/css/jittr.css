@@ -12,7 +12,7 @@ body {
 }
 
 a {
-    color:#249eca;
+    /*color:#249eca;*/
     text-decoration:none;
 }
 
@@ -26,6 +26,7 @@ img {
 
 #header {
     width:100%;
+    float:left;
 }
 
 #container {
@@ -38,6 +39,7 @@ img {
 #content {
     overflow:auto;
     width:100%;
+    float:left;
 }
 
 #errormessage{
@@ -68,19 +70,53 @@ img {
     font-weight:bold;
     padding:5px;
     width: 250px;
-    /*float:left;*/
     -moz-border-radius:10px;            /*For firefox */
     border-radius:10px;
     height: 100%;
 }
 
 #logo {
-    /*float:left;    */
+    float:left;
+}
+
+#navigation {
+    background: rgba(255,255,255,0.4);
+    color:#333;
+    font-weight:bold;
+    font-size:15px;
+    padding:5px;
+    width: 250px;
+    -moz-border-radius:10px;            /*For firefox */
+    border-radius:10px;
+    height: 100%;
+}
+
+#quick_description {
+    width:635px;
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    -moz-border-radius:10px;              /*For firefox */
+    border-radius:10px;
+    float:right;
+    margin-right:15px;
+    margin-bottom:5px;
+}
+
+#slogan_thing {
+    font-weight:bold;
+    color:#FFF;
+    /*margin:auto;*/
+    font-size:30px;
+    margin-left:5px;
 }
 
 #title {
-    /*float:left;*/
-    margin-left:20px;
+    font:100px 'Brushstroke', fantasy;
+    color:#FFF;
+    float:left;
+    margin-left:150px;
+    font-weight:bold;
+    margin-top:35px;
 }
 
 #tweet_form {
