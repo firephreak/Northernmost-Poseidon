@@ -29,7 +29,7 @@
                 <label id="passwordlabel" for="passwordfield">Password:</label>
                 <input id="passwordfield" type="password" size="10" name="password" /> <br />
                 <input type="checkbox" name="rememberme" value="yes" /> Remember Me!<br />
-                <input type="image" src="../../images/loginbuttontrimmed.png" height="40" alt="submit button" />
+                <input type="image" src="<c:url value="/images/loginbuttontrimmed.png" />" height="40" alt="submit button" />
             </form>
 
             <div id="errormessage">

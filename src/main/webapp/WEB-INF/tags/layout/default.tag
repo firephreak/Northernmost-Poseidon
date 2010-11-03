@@ -14,7 +14,7 @@
         <div id="container">
             <div id="header">
                 <div id="logo">
-                    <img id="songcloud_top_logo" src="../../../images/songcloud256.png" height="170" />
+                    <img id="songcloud_top_logo" src="<c:url value="/images/songcloud256.png" />" height="170" />
                 </div>
                 <div id="title">SongCloud</div>
             </div>
