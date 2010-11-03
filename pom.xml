@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.rallyedu</groupId>
-    <artifactId>lab7</artifactId>
+    <artifactId>songcloud</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>CSCI 3308 Lab 7 Web Application</name>
-    <url>3308.rallyedu.net</url>
+    <name>CSCI 3308 SongCloud Application</name>
+    <url>northernmostposeidon.it.cx/songcloud</url>
 
     <dependencies>
 
@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>lab7</finalName>
+        <finalName>songcloud</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
