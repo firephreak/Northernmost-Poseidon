@@ -1,4 +1,4 @@
-package net.rallyedu.lab7.servlet;
+package cx.it.northernmostposeidon.songcloud.servlet;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static net.rallyedu.lab7.TwitterUtils.newTwitter;
-import static net.rallyedu.lab7.TwitterUtils.setAccessToken;
+import static cx.it.northernmostposeidon.songcloud.TwitterUtils.newTwitter;
+import static cx.it.northernmostposeidon.songcloud.TwitterUtils.setAccessToken;
 
 public class AuthServlet extends HttpServlet {
     public static final String AUTH_FORM_VIEW = "/WEB-INF/jsp/authForm.jsp";
