@@ -91,6 +91,21 @@ img {
     height: 100%;
 }
 
+<<<<<<< HEAD:src/main/webapp/css/jittr.css
+#player_top_bar {
+    width:960px;
+}
+
+#player_left_bar {
+    width:150px;
+}
+
+#player_right_bar {
+    width:100px;
+}
+
+=======
+>>>>>>> 05bcd213dc9430113c940b64eb5c521895cab6ba:src/main/webapp/css/jittr.css
 #quick_description {
     width:635px;
     background: rgba(255,255,255,0.2);
@@ -177,6 +192,27 @@ img {
     margin-bottom:5px;
 }
 
+<<<<<<< HEAD:src/main/webapp/css/jittr.css
+.textframe_right_norightmargin {
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    float:right;
+    -moz-border-radius:10px;               /*For firefox */
+    border-radius:10px;
+    margin-bottom:5px;
+}
+
+.textframe_nofloat {
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    -moz-border-radius:10px;               /*For firefox */
+    border-radius:10px;
+    margin-right:15px;
+    margin-bottom:5px;
+}
+
+=======
+>>>>>>> 05bcd213dc9430113c940b64eb5c521895cab6ba:src/main/webapp/css/jittr.css
 
 .status {
     margin:10px 0;

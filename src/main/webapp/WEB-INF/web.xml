@@ -6,6 +6,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <servlet>
+        <servlet-name>player</servlet-name>
+        <servlet-class>net.rallyedu.lab7.servlet.PlayerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>player</servlet-name>
+        <url-pattern>/player</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>auth</servlet-name>
         <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.AuthServlet</servlet-class>
     </servlet>
