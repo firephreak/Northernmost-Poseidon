@@ -34,6 +34,8 @@ public class TwitterFilter implements Filter {
             IOException,
             ServletException
     {
+        chain.doFilter(request, response); //Stop filtering for testing
+
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         HttpSession session = req.getSession();
@@ -45,7 +47,8 @@ public class TwitterFilter implements Filter {
         if (verifyCredentials(twitter)) {
             setTwitter(req, twitter);
             chain.doFilter(request, response);
-        } else {
+        }
+        else {
             resp.sendRedirect(AUTH_URI);
         }
     }
