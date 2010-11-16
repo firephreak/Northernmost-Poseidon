@@ -7,8 +7,8 @@
 
 <html>
     <head>
-        <title><c:out value="${title != null ? title : 'Jittr'}"/></title>
-        <link rel="stylesheet" href="<c:url value="/css/songcloud.css"/>"/>
+        <title><c:out value="${title != null ? title : 'SongCloud'}"/></title>
+        <link rel="stylesheet" href="<c:url value="../../../css/songcloud.css"/>"/>
     </head>
     <body>
         <div id="container">
