@@ -1,1 +1,5 @@
 target/*
+songcloud.iml
+songcloud.ipr
+songcloud.iws
+config/testing.json
