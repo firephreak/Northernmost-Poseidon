@@ -5,10 +5,9 @@ html,body {
 
 body {
     /*background-image: url('../images/Paper0007_M(blue).jpg');*/
-    background:#375F90;
+    background:#ebf5ff;
     color:#333;
     font:14px 'Lucida Grande', sans-serif;
-    height:100%;
 }
 
 a {
@@ -89,19 +88,6 @@ img {
     -moz-border-radius:10px;            /*For firefox */
     border-radius:10px;
     height: 100%;
-}
-
-/* <<<<<<< HEAD:src/main/webapp/css/jittr.css */
-#player_top_bar {
-    width:960px;
-}
-
-#player_left_bar {
-    width:150px;
-}
-
-#player_right_bar {
-    width:100px;
 }
 
 /*=======
@@ -190,6 +176,96 @@ img {
     border-radius:10px;
     margin-right:15px;
     margin-bottom:5px;
+}
+
+
+.player_topbar {
+    background:#697480;
+    padding:10px;
+	margin:2px;
+}
+
+.player_left {
+    background:#aebfcf;
+	float:left;
+	width:250px;
+	height:93.8%;
+	padding:2px;
+    margin:2px;
+	margin-top:0px;
+}
+
+.player_right {
+    background:#aebfcf;
+	float:right;
+	width:125px;
+	height:91.8%;
+    padding:10px;
+    margin:2px;
+    margin-top:44px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+
+.directory_structure{
+	overflow: scroll; 
+	overflow-y: scroll; 
+	overflow-x: hidden;	
+	overflow:-moz-scrollbars-vertical;
+	height:76.8%;
+}
+
+.directory{
+    background:#ccdae9;
+	height:15px;
+    padding:5px;
+	margin-bottom:2px;
+}
+
+
+.player_center{
+	margin-left:256px;
+	margin-right:147px;
+	height:59%;
+}
+
+img.center{   
+	display: block;   
+	margin-left: auto;   
+	margin-right: auto; 
+	}
+
+.player_center_songs{
+	overflow: scroll; 
+	overflow-y: scroll; 
+	overflow-x: hidden;	
+	overflow:-moz-scrollbars-vertical;
+	height:111.3%;
+	margin-right:2px;
+	margin-bottom:0px;
+}
+
+.player_center_path {
+    background:#86939e;
+	height:15px;
+    padding:10px;
+	margin:2px;
+}
+
+.song{
+    background:#ccdae9;
+	height:15px;
+    padding:5px;
+	margin-bottom:2px;
+}
+
+#control_float {
+	background:#697480;
+	height:175px;
+    padding:5px;
+	margin:2px;
+
 }
 
 /* <<<<<<< HEAD:src/main/webapp/css/jittr.css */
