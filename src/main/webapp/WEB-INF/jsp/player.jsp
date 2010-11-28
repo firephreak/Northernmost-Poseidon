@@ -5,96 +5,207 @@
 <head>
 	<title><c:out value="${title != null ? title : 'SongCloud Player'}"/></title>
 	<link rel="stylesheet" href="<c:url value="/css/songcloud.css"/>"/>
+
+        <script type="text/javascript">
+
+        var load_array = function() {
+            song_array = new Array();        //Global song URL array
+            filename_array = new Array();    //Global file name array
+            current_song = null;                //Global song counter
+
+            song_array[0] = "http://dl.dropbox.com/u/13617849/01_seven_faces_of_him.ogg"; //These will be dynamically
+            song_array[1] = "http://dl.dropbox.com/u/13617849/calexico1998-06-14t02.ogg"; // generated eventually
+            song_array[2] = "http://dl.dropbox.com/u/13617849/John_Holowach_-_03_-_Harlem_Byzantine_Part_1.ogg";
+            song_array[3] = "http://dl.dropbox.com/u/13617849/llab007a_b-complex-amazon_rain.ogg";
+
+            filename_array[0] = "Seven Faces of Him";
+            filename_array[1] = "Calexico";
+            filename_array[2] = "Harlem Byzantine (Part 1)";
+            filename_array[3] = "Amazon Rain";
+        };
+
+        var control_pause = function() {
+            if (current_song == null) return;
+            var audio_object = document.getElementById('audio_block');
+            var pause_object = document.getElementById('pause');
+            var resume_object = document.createElement('a');
+            resume_object.setAttribute('id',"resume");
+            resume_object.setAttribute('onclick',"control_resume();");
+            resume_object.innerHTML = "Resume";
+
+            pause_object.parentNode.replaceChild(resume_object,pause_object);
+            audio_object.pause();
+        };
+
+        var control_resume = function() {
+            if (current_song == null) return;
+            var audio_object = document.getElementById('audio_block');
+            var resume_object = document.getElementById('resume');
+            var pause_object = document.createElement('a');
+            pause_object.setAttribute('id',"pause");
+            pause_object.setAttribute('onclick',"control_pause();");
+            pause_object.innerHTML = "Pause";
+
+            if (resume_object != null) resume_object.parentNode.replaceChild(pause_object,resume_object); //If called
+            audio_object.play();                                                                          // by play()
+        };
+
+        var control_next = function() {
+            if (current_song == null) return;
+            if (song_array[current_song + 1] == null) return;
+            play_song(current_song + 1);
+        };
+
+        var control_prev = function() {
+            if (current_song == null) return;
+            if (current_song == 0) return;
+            play_song(current_song - 1);
+        };
+
+        var play_song = function(song_number) {
+            var new_audio = document.createElement('audio');
+            var new_song_div = document.getElementById('song' + song_number);
+            var old_song_div = document.getElementById('song' + current_song);
+            new_audio.setAttribute('id',"audio_block");
+            new_audio.setAttribute('onended',"play_song("+(song_number+1)+")");
+            new_audio.setAttribute('controls','');
+            new_audio.setAttribute('autoplay','');
+            new_audio.innerHTML = '<source src="'+song_array[song_number]+'" />';
+
+            //var replaced_div = document.getElementById('song'+song_number);    (old version)
+            var replaced_div = document.getElementById('control_swap_holder');
+            if (replaced_div != null) replaced_div.parentNode.replaceChild(new_audio,replaced_div);
+            else {
+                var replaced_audio = document.getElementById('audio_block');
+                replaced_audio.parentNode.replaceChild(new_audio,replaced_audio);
+            }
+
+            new_song_div.innerHTML += "-----Currently Playing-----";
+            if (old_song_div != null) old_song_div.innerHTML = filename_array[current_song];//'if' in case of first song
+
+            current_song = song_number;
+            control_resume();           // So that the resume button gets replaced if need be
+        };
+
+        /*var self_delete_replace = function(song_number) {
+            var audio_object = document.getElementById('audio_block');
+
+            var replacement_div = document.createElement('div');
+            //replacement_div.setAttribute('id',"song"+div_number);   (old version)
+            //replacement_div.setAttribute('class',"song");           (old version)
+            //replacement_div.innerHTML = filename_array[div_number]; (old version)
+            replacement_div.setAttribute('id','control_swap_holder');
+
+            audio_object.parentNode.replaceChild(replacement_div,audio_object);
+
+            play_song(song_number + 1);
+        };*/  //Old crappy spaghetti code
+
+        var generate_songlist = function() {
+            var i = 0;
+            while(song_array.length != i && filename_array.length != i){
+                var newdivname = document.createElement('div');
+                var refdiv = document.getElementById('invisible_reference');
+                newdivname.setAttribute('id',"song"+i);
+                newdivname.setAttribute('class',"song");
+                newdivname.innerHTML = "<a onClick=play_song("+i+")>"+filename_array[i]+"</a>";
+                refdiv.parentNode.insertBefore(newdivname,refdiv);
+                i = i + 1;
+            }
+        }
+
+    </script>
+
 </head>
 <body>
 <div id="player_top_bar" class="player_topbar">
 	<big>SONGCLOUD</big>
 </div>
 <div id="player_left_bar" class="player_left">
-	<img id="songcloud_top_logo" src="<c:url value="/images/songcloud256player.png" />" height="170" class="center"/>
+	<img id="songcloud_top_logo" src="<c:url value="/images/songcloud256.png" />" height="170" class="center"/>
 	<div id="directory" class="directory_structure">
 		<div id="dir1" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir2" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir3" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir4" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir5" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir6" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir7" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir8" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir9" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir10" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir11" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir12" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir13" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir14" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir15" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir16" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir17" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir18" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir19" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir20" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir21" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir22" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir23" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir24" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir25" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir26" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir27" class="directory">
 			Directory
 		</div>
-		<div id="dir1" class="directory">
+		<div id="dir28" class="directory">
 			Directory
 		</div>
 	</div>
@@ -104,7 +215,7 @@
 		Public > Artist > Album
 	</div>
 	<div id="player_center_view" class="player_center_songs">
-		<div id="song1" class="song">
+		<!--<div id="song1" class="song">
 			File_Name.mp3
 		</div>
 		<div id="song2" class="song">
@@ -131,57 +242,63 @@
 		<div id="song9" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song10" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song11" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song12" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song13" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song14" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song15" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song16" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song17" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song18" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song19" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song20" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song21" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song22" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song23" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song24" class="song">
 			File_Name.mp3
 		</div>
-		<div id="song9" class="song">
+		<div id="song25" class="song">
 			File_Name.mp3
-		</div>
+		</div>-->
+        <div id="invisible_reference"></div>
+        <script type="text/javascript">load_array(); generate_songlist();</script>
 	</div>
 	<div id="control_float">
-		This is where the controls will go
+		<!--This is where the controls will go-->
+        <div id="control_swap_holder"></div> <br/>
+        <a id="prev" onclick="control_prev();">Previous Song</a> <br/>
+        <a id="pause" onclick="control_pause();">Pause</a> <br/>
+        <a id="next" onclick="control_next();">Next Song</a> <br/>
 	</div>
 </div>
 <div id="player_right_bar" class="player_right">
