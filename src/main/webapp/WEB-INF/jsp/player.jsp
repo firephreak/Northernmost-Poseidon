@@ -81,7 +81,9 @@
             }
 
             new_song_div.innerHTML += "-----Currently Playing-----";
-            if (old_song_div != null) old_song_div.innerHTML = filename_array[current_song];//'if' in case of first song
+            if (old_song_div != null) old_song_div.innerHTML = "<a onClick=play_song("+current_song+")>"+
+                    filename_array[current_song]+"</a>";
+                                                                // 'if statement in case it's the first song
 
             current_song = song_number;
             control_resume();           // So that the resume button gets replaced if need be
