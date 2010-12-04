@@ -178,6 +178,10 @@ img {
     margin-bottom:5px;
 }
 
+.player_container {
+	height:100%;
+	width:100%;
+}
 
 .player_topbar {
     background:#697480;
@@ -265,7 +269,29 @@ img.center{
 	height:175px;
     padding:5px;
 	margin:2px;
+}
 
+#control_box {
+	background:#ccdae9;
+	display:block;
+	margin-right:auto;
+	margin-left:auto;
+	height:95%;
+	width:450px;
+	margin-top:5px;
+}
+
+#pause{
+}
+
+#prev{
+	float:left;
+	margin-top:-100px;
+}
+
+#next{
+	float:right;
+	margin-top:-100px;
 }
 
 /* <<<<<<< HEAD:src/main/webapp/css/jittr.css */

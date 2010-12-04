@@ -13,13 +13,17 @@ import java.util.Map;
 
 public class DropboxServlet extends HttpServlet {
 
+	public static final String PLAYER_VIEW = "/WEB-INF/jsp/player.jsp";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
 		try {
 			DropboxClient client = getClient();
-		    Map accountInfo = client.accountInfo(true, null);
+			Map accountInfo = client.accountInfo(true, null);
 		    System.out.println(accountInfo);
+			
+			req.getRequestDispatcher(PLAYER_VIEW).forward(req, resp);
         } catch (Exception e) {
 			e.printStackTrace();
         }

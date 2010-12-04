@@ -36,7 +36,7 @@ public class AuthServlet extends HttpServlet {
 		try {
 			Authenticator auth = getAuthenticator();
 			auth.retrieveAccessToken(token);
-			System.out.println("token: " + token);
+			//System.out.println("token: " + token);
 		} catch (Exception e) {
 			e.printStackTrace();
 	    }
