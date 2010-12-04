@@ -1,0 +1,14 @@
+{
+    "server": "api.getdropbox.com",
+    "content_server": "api-content.getdropbox.com",
+    "port": 80,
+    "trusted_access_token_url": "http://api.getdropbox.com/0/token",
+    "partner_username": "YOUR PARTNER LOGIN",
+    "partner_password": "YOUR PARTNER USERNAME",
+
+    "consumer_key": "YOUR KEY",
+    "consumer_secret": "YOUR SECRET",
+    "verifier": "",
+    "username": "A TEST USER NAME",
+    "password": "A TEST PASSWORD",
+} 
