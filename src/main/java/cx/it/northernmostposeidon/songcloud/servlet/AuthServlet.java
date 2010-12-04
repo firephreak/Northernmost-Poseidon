@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class AuthServlet extends HttpServlet {
+    public static final String ATTRIBUTE_AUTH_TOKEN = "auth";
 	public static final String TOKEN_PARAMETER = "oauth_token";
 	
     @Override
@@ -19,7 +20,7 @@ public class AuthServlet extends HttpServlet {
 		try {
 			String token = req.getParameter(TOKEN_PARAMETER);
 			if(token != null) {
-				handleAuth(token);
+				handleAuth(token, req.getSession());
 				resp.sendRedirect("http://localhost:8080/dropbox");
 			}
 			else {
@@ -32,10 +33,11 @@ public class AuthServlet extends HttpServlet {
         }
     }
 
-	protected void handleAuth(String token) {
+	protected void handleAuth(String token, HttpSession session) {
 		try {
 			Authenticator auth = getAuthenticator();
 			auth.retrieveAccessToken(token);
+            session.setAttribute(ATTRIBUTE_AUTH_TOKEN, auth);
 			//System.out.println("token: " + token);
 		} catch (Exception e) {
 			e.printStackTrace();

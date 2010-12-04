@@ -1,6 +1,8 @@
 package cx.it.northernmostposeidon.songcloud;
 
 import com.dropbox.client.*;
+
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 public class DropboxUtils {
@@ -27,10 +29,10 @@ public class DropboxUtils {
 		
 		return auth;
 	}
-	
-	public static DropboxClient getClient() {
-		if(client == null) {
-			client = new DropboxClient(config, auth);
+
+	public static DropboxClient getClient(HttpSession session) {
+		if(session != null) {
+			client = new DropboxClient(config, (Authenticator)session.getAttribute("auth"));
 		}
 		return client;
 	}
