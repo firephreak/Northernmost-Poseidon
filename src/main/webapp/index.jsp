@@ -11,14 +11,7 @@
         <div id="instructions_login" >
             To use SongCloud, please log into your DropBox account so we can get your music! <br /> <br />
 
-            <form action="<c:url value="/auth" />" method="post">
-                <label id="usernamelabel" for="usernamefield">Username:</label>
-                <input id="usernamefield" type="text" size="10" name="username" /> <br />
-                <label id="passwordlabel" for="passwordfield">Password:</label>
-                <input id="passwordfield" type="password" size="10" name="password" /> <br />
-                <input type="checkbox" name="rememberme" value="yes" /> Remember Me!<br />
-                <input type="image" src="<c:url value="/images/loginbuttontrimmed.png" />" height="40" alt="submit button" />
-            </form>
+			<a href="<c:url value="/auth" />">Login With Dropbox</a>
 
             <div id="errormessage">
                 <c:set var="fail" value="true" />
