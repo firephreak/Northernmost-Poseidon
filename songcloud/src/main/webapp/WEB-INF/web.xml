@@ -2,33 +2,43 @@
 
 <web-app version="2.4"
          xmlns="http://java.sun.com/xml/ns/j2ee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  
+  <servlet>
+    <servlet-name>player</servlet-name>
+    <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.PlayerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>player</servlet-name>
+    <url-pattern>/player</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>auth</servlet-name>
+    <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.AuthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>auth</servlet-name>
+    <url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>dropbox</servlet-name>
+    <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.DropboxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dropbox</servlet-name>
+    <url-pattern>/dropbox</url-pattern>
+  </servlet-mapping>
 
-    <servlet>
-        <servlet-name>player</servlet-name>
-        <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.PlayerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>player</servlet-name>
-        <url-pattern>/player</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>auth</servlet-name>
-        <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.AuthServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>auth</servlet-name>
-        <url-pattern>/auth</url-pattern>
-    </servlet-mapping>
-
-		<servlet>
-        <servlet-name>dropbox</servlet-name>
-        <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.DropboxServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>dropbox</servlet-name>
-        <url-pattern>/dropbox</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>id3</servlet-name>
+    <servlet-class>cx.it.northernmostposeidon.songcloud.servlet.ID3Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>id3</servlet-name>
+    <url-pattern>/id3</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
