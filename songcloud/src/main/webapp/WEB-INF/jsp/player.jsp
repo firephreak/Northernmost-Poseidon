@@ -18,14 +18,25 @@
         current_song = null;
      
         window.onload = function () {
+            var A = [], B = [], C = [];
             var as = $$("#player_center_view a");
             for (var i = 0; i < as.length; i++) {
                 var href = as[i].getAttribute("href");
-                SONGS.push({ href: href, a: as[i], tr: as[i].parentNode.parentNode });
+                var obj = { href: href, a: as[i], tr: as[i].parentNode.parentNode };
+                SONGS.push(obj);
+                if (i <= Math.round(as.length / 3)) {
+                    A.push(obj);
+                } else if (i <= Math.round(as.length / 3) * 2) {
+                    B.push(obj);
+                } else {
+                    C.push(obj);
+                }
                 as[i].update(href.substring(href.lastIndexOf("/") + 1));
                 as[i].onclick = mk_onclick(i);
             }
-            lookup(SONGS);
+            lookup(A);
+            lookup(B);
+            lookup(C);
         };
         
         function mk_onclick(i) { return function () { play_song(i); return false; }; };
