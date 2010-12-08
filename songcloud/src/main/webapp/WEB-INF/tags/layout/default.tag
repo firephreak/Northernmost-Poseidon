@@ -14,18 +14,12 @@
         <div id="container">
             <div id="header">
                 <div id="logo">
-                    <img id="songcloud_top_logo" src="<c:url value="/images/songcloud256.png" />" height="170" />
+                    <img id="songcloud_top_logo" src="<c:url value="/images/songcloud256player.png" />" height="170" />
                 </div>
-                <div id="title">SongCloud</div>
+                <div id="title">SONGCLOUD</div>
             </div>
             <div id="content">
                 <jsp:invoke fragment="content"/>
-            </div>
-
-        </div>
-        <div id="footer">
-            <div id="footer_info">
-                    Cool info goes here.
             </div>
         </div>
     </body>

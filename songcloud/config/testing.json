@@ -5,6 +5,6 @@
 "request_token_url": "http://api.getdropbox.com/0/oauth/request_token",
 "access_token_url": "http://api.getdropbox.com/0/oauth/access_token",
 "authorization_url": "http://api.getdropbox.com/0/oauth/authorize",
-"consumer_key": "tdnx79owu44kmzg",
-"consumer_secret": "c45f0boz2km71bd",
+"consumer_key": "8ihu59zup4pj3l4",
+"consumer_secret": "7js4vg1fpcr6aew"
 }

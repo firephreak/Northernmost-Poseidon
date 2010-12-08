@@ -32,46 +32,13 @@ img {
     height:100%;
     margin:auto;
     position:relative;
-    width:980px;
+    width:600px;
 }
 
 #content {
     overflow:auto;
     width:100%;
     float:left;
-}
-
-#errormessage{
-    color:red;
-    font-weight:normal;
-}
-
-#footer {
-    font-size:12px;
-    /*background-image: url('../images/white_torn_footer.png');*/
-    /*background-repeat:repeat-x;*/
-    background:#FFFFFF;
-    position:fixed;
-    bottom:0px;
-    height:50px;
-    width:100%
-}
-
-#footer_info {
-    padding-top:10px;
-    width:100px;
-    padding-left:20px;
-}
-
-#instructions_login {
-    background: rgba(255,255,255,0.4);
-    color:#333;
-    font-weight:bold;
-    padding:5px;
-    width: 250px;
-    -moz-border-radius:10px;            /*For firefox */
-    border-radius:10px;
-    height: 100%;
 }
 
 #logo {
@@ -90,134 +57,95 @@ img {
     height: 100%;
 }
 
-/*=======
->>>>>>> 05bcd213dc9430113c940b64eb5c521895cab6ba:src/main/webapp/css/jittr.css */
-#quick_description {
-    width:635px;
-    background: rgba(255,255,255,0.2);
+.textframe_right{
+    -webkit-box-shadow: 0 0 3px 3px #999;
+    border-radius:10px;
+    border:3px solid #fff;
+    width:91%;
+    background:#697480;
     padding:10px;
     -moz-border-radius:10px;              /*For firefox */
     border-radius:10px;
-    float:right;
     margin-right:15px;
     margin-bottom:5px;
+    margin-top:12px;
+    margin-left:11px;
+    color:#FFF;
+}
+
+.textframe_right a
+{
+    color:#FFF;
+    text-decoration:underline;
 }
 
 #slogan_thing {
     font-weight:bold;
     color:#FFF;
-    /*margin:auto;*/
     font-size:30px;
-    margin-left:5px;
 }
 
-#title {
-    font:100px 'Brushstroke', fantasy;
-    color:#FFF;
-    float:left;
-    margin-left:150px;
+#title {  
+    font:60px 'Lucida Grande', sans-serif;
+    color:#697480;
+	margin:0px auto;
     font-weight:bold;
-    margin-top:35px;
+    margin-left:190px;
+    margin-top:50px;
 }
 
-#tweet_form {
-    margin-bottom:20px;
-    overflow:auto;
+#mainContainer
+{
+    height:100%;
+    width:100%
 }
 
-#tweet_form textarea {
-    background:#eee;
-    border:0;
-    padding:5px;
-    font-size:20px;
-    width:753px;
+#application {
+    margin-right: 149px;
+    position: relative;
 }
 
-#tweet_form button {
-    float:right;
-    font-size:14px;
-    margin-top:10px;
+#main
+{
+    height: 100%;
+    padding:0px;
+    overflow:hidden;
+    width: 100%;
 }
 
-.updates_info {
-    background: rgba(255,255,255,0.4);
-    width:625px;
-    /*float:left;*/
-    padding:5px;
-    font-weight:bold;
-    -moz-border-radius:10px;              /*For firefox */
-    border-radius:10px;
-}
-
-#passwordlabel {
-    margin-right:5px;
-}
-
-.command {
-    font-family:courier, monospace;
-    font-size:10px;
-}
-
-.textframe_left {
-    background: rgba(255,255,255,0.2);
-    padding:10px;
-    float:left;
-    -moz-border-radius:10px;               /*For firefox */
-    border-radius:10px;
-    margin-right:15px;
-    margin-bottom:5px;
-}
-
-.textframe_right {
-    background: rgba(255,255,255,0.2);
-    padding:10px;
-    float:right;
-    -moz-border-radius:10px;               /*For firefox */
-    border-radius:10px;
-    margin-right:15px;
-    margin-bottom:5px;
-}
-
-.player_container {
-	height:100%;
-	width:100%;
-}
-
-.player_topbar {
+#player_topbar {
     background:#697480;
     padding:10px;
 	margin:2px;
+    height:20px;
 }
-
-.player_left {
+#player_left {
     background:#aebfcf;
 	float:left;
 	width:250px;
-	height:93.8%;
+	height:100%;
 	padding:2px;
     margin:2px;
 	margin-top:0px;
 }
 
-.player_right {
+#player_right {
     background:#aebfcf;
-	float:right;
-	width:125px;
-	height:91.8%;
-    padding:10px;
+    float:right;
+    overflow:hidden;
+    position:relative;
+	width:127px;
+    height:50%;
     margin:2px;
-    margin-top:44px;
-	position: absolute;
-	right:0;
-	top:0;
+    margin-left:0px;
+    padding:10px;
 }
 
-.directory_structure{
-	overflow: scroll; 
-	overflow-y: scroll; 
-	overflow-x: hidden;	
+#directory_structure{
+	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
 	overflow:-moz-scrollbars-vertical;
-	height:76.8%;
 }
 
 .directory{
@@ -228,29 +156,33 @@ img {
 }
 
 
-.player_center{
+#player_center{
 	margin-left:256px;
-	margin-right:147px;
-	height:59%;
+	height:100%;
 }
 
-img.center{   
-	display: block;   
-	margin-left: auto;   
-	margin-right: auto; 
+img.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	}
 
-.player_center_songs{
-	overflow: scroll; 
-	overflow-y: scroll; 
-	overflow-x: hidden;	
-	overflow:-moz-scrollbars-vertical;
-	height:111.3%;
-	margin-right:2px;
-	margin-bottom:0px;
+
+.player_center_main
+{
+    width:100%;
+    height:100%;
 }
 
-.player_center_path {
+#player_center_view{
+	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
+	overflow:-moz-scrollbars-vertical;
+    margin:2px;
+}
+
+#player_center_path {
     background:#86939e;
 	height:15px;
     padding:10px;
@@ -265,23 +197,24 @@ img.center{
 }
 
 #control_float {
-	background:#697480;
+	background:#86939e;
 	height:175px;
     padding:5px;
 	margin:2px;
+    bottom:0px;
+    position: absolute;
 }
 
 #control_box {
 	background:#ccdae9;
+    border-radius:10px;
+    border:3px solid #fff;
 	display:block;
 	margin-right:auto;
 	margin-left:auto;
-	height:95%;
+	height:93%;
 	width:450px;
 	margin-top:5px;
-}
-
-#pause{
 }
 
 #prev{
@@ -294,36 +227,60 @@ img.center{
 	margin-top:-100px;
 }
 
-/* <<<<<<< HEAD:src/main/webapp/css/jittr.css */
-.textframe_right_norightmargin {
-    background: rgba(255,255,255,0.2);
-    padding:10px;
-    float:right;
-    -moz-border-radius:10px;               /*For firefox */
-    border-radius:10px;
-    margin-bottom:5px;
+#box-table-a
+{
+	border-collapse: collapse;
+	font-size: 13px;
+    color: black;
+	text-align:left;
 }
 
-.textframe_nofloat {
-    background: rgba(255,255,255,0.2);
-    padding:10px;
-    -moz-border-radius:10px;               /*For firefox */
-    border-radius:10px;
-    margin-right:15px;
-    margin-bottom:5px;
+#box-table-a a
+{
+    color: black;
+    text-decoration:none;
 }
 
-/*=======
->>>>>>> 05bcd213dc9430113c940b64eb5c521895cab6ba:src/main/webapp/css/jittr.css */
+#box-table-a th
+{
+	background: #aebfcf;
+	border-bottom: 2px solid #ebf5ff;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+}
+#box-table-a td
+{
+	border-bottom: 2px solid #ebf5ff;
+	border-top: 1px solid transparent;
+	padding: 8px;
+}
+#box-table-a tr
+{
+    background:#ccdae9;
 
-.status {
-    margin:10px 0;
-    overflow:auto;
 }
 
-.status img {
-    border:1px solid #ccc;
-    float:left;
-    margin-right:10px;
+#box-table-a tr:hover
+{
+	background: #aebfcf;
+    cursor: pointer;
+    color:black;
 }
 
+#box-table-a tr:hover a
+{
+    color:black;
+}
+
+#box-table-a .playing
+{
+	background: #697480;
+    color: white;
+}
+
+#box-table-a .playing a
+{
+    text-decoration:none;
+    color: white;
+}
