@@ -21,18 +21,12 @@ public class DropboxUtils {
 			}
 		}
 		
-		System.out.println("consumer key: " + (String)config.get("consumer_key"));
-		System.out.println("consumer secret: " + (String)config.get("consumer_secret"));
-		System.out.println("request token url: " + (String)config.get("request_token_url"));
-		System.out.println("access token url: " + (String)config.get("access_token_url"));
-		System.out.println("authorization url: " + (String)config.get("authorization_url"));
-		
 		return auth;
 	}
 
-	public static DropboxClient getClient(HttpSession session) {
-		if(session != null) {
-			client = new DropboxClient(config, (Authenticator)session.getAttribute("auth"));
+	public static DropboxClient getClient(Authenticator auth) {
+		if(auth != null) {
+			client = new DropboxClient(config, auth);
 		}
 		return client;
 	}

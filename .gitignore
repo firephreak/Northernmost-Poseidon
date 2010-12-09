@@ -1,5 +1,6 @@
-target/*
-songcloud.iml
-songcloud.ipr
-songcloud.iws
+.DS_Store
+*/target/*
+*.iml
+*.ipr
+*.iws
 config/testing.json

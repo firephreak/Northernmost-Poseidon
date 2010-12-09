@@ -13,5 +13,4 @@ public class PlayerServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
          req.getRequestDispatcher(PLAYER_VIEW).forward(req, resp);
     }
-
 }

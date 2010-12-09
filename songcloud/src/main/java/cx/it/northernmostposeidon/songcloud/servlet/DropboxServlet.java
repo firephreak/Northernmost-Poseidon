@@ -18,36 +18,36 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class DropboxServlet extends HttpServlet {
-    
+
     public static final String PLAYER_VIEW = "/WEB-INF/jsp/player.jsp";
-    
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws ServletException, IOException {  
-	ArrayList<String> songs = new ArrayList<String>();
-	
-        try {                     
-            DropboxClient client = getClient(req.getSession());
-	    
+      throws ServletException, IOException {
+	    ArrayList<String> songs = new ArrayList<String>();
+
+        try {
+            DropboxClient client = getClient((Authenticator)req.getSession().getAttribute("auth"));
+
             Map accountInfo = client.accountInfo(true, null);
-	    Map body = (Map) accountInfo.get("body");
-	    String uid = body.get("uid").toString();
+            Map body = (Map) accountInfo.get("body");
+            String uid = body.get("uid").toString();
 
-	    Map metadata = client.metadata("dropbox", "/Public/music",
-					   100, null, true, false, null);
-	    JSONArray contents = (JSONArray) metadata.get("contents");
+            Map metadata = client.metadata("dropbox", "/Public/music",
+                           100, null, true, false, null);
+            JSONArray contents = (JSONArray) metadata.get("contents");
 
-	    String url = "https://dl.dropbox.com/u/" + uid;
+            String url = "https://dl.dropbox.com/u/" + uid;
 
-	    for (Object c : contents) {
-		String path = (String) ((Map) c).get("path");
-		songs.add(url + path.substring(7));
-	    }
+            for (Object c : contents) {
+                String path = (String) ((Map) c).get("path");
+                songs.add(url + path.substring(7));
+            }
         } catch (Exception e) {
-	    e.printStackTrace();
+            e.printStackTrace();
         }
-	
-	req.setAttribute("songs", songs.toArray());
-	req.getRequestDispatcher(PLAYER_VIEW).forward(req, resp);
+
+	    req.setAttribute("songs", songs.toArray());
+	    req.getRequestDispatcher(PLAYER_VIEW).forward(req, resp);
     }
 }
