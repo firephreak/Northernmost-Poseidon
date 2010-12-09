@@ -59,13 +59,13 @@
         <version>2.8</version>
         <scope>test</scope>
     </dependency>
-  <!--
+  
     <dependency>
         <groupId>org.apache.httpcomponents</groupId>
         <artifactId>httpmime</artifactId>
-        <version>4.0.3</version>
-        <scope>test</scope>
-    </dependency> -->
+        <version>4.0-beta1</version>
+        <!--<scope>test</scope>-->
+    </dependency>
   </dependencies>
 
   <build>
