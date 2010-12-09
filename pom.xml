@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cx.it.northernmostposeidon</groupId>
-  <artifactId>songlcoud-parent</artifactId>
+  <artifactId>songcloud-parent</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>songcloud</module>
-    <module>dropbox-client-java</module>
+    <module>dropbox-client</module>
   </modules>
 </project>
