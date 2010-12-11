@@ -31,82 +31,81 @@ public class ID3Servlet extends HttpServlet {
         final InputStream is = new BufferedInputStream(url.openStream());
 
         String filename = url.getFile();
-        filename = filename.substring(filename.lastIndexOf('/') + 1);
-	    File file = new File(filename);
+        filename = "/tmp/" + filename.substring(filename.lastIndexOf('/') + 1);
+	File file = new File(filename);
+	file.setWritable(true);
         final FileOutputStream os = new FileOutputStream(file);
 
         final Object[] status = new Object[] { null };
 
         new Thread(new Runnable() {
             public void run() {
-            try {
-                byte[] data = new byte[conn.getContentLength()];
-                int read = 0, offset = 0;
-                while (status[0] == null && offset < data.length) {
-                read = is.read(data, offset, data.length - offset);
-                if (read == -1) {
-                    break;
-                } else {
-                    os.write(data, offset, read);
-                    os.flush();
-                    offset += read;
-                }
-                }
+		try {
+		    byte[] data = new byte[conn.getContentLength()];
+		    int read = 0, offset = 0;
+		    while (status[0] == null && offset < data.length) {
+			read = is.read(data, offset, data.length - offset);
+			if (read == -1) {
+			    break;
+			} else {
+			    os.write(data, offset, read);
+			    os.flush();
+			    offset += read;
+			}
+		    }
+		    
+		    System.out.printf("ID3: read %d/%d = %.2f%%\n",
+				      offset, data.length, offset / (float) data.length);
+		    
+		    is.close();
+		    os.close();
 
-                System.out.printf("ID3: read %d/%d = %.2f%%\n",
-                            offset, data.length, offset / (float) data.length);
-
-                is.close();
-                os.close();
-
-                status[0] = offset == data.length;
-            } catch (Exception e) {
-                /* yep. */
+		    status[0] = offset == data.length;
+		} catch (Exception e) {
+		    /* yep. */
+		}
             }
-            }
-        }).start();
+	}).start();
 	
         String name = "Error!", artist = "Error!", album = "Error!";
         boolean finished = false;
 
         while (!finished) {
             try {
-            MediaFile mf = new MP3File(file);
-            ID3Tag[] tags = mf.getTags();
-            for (ID3Tag tag : tags) {
-                if (tag instanceof ID3V2Tag) {
-                ID3V2Tag t = (ID3V2Tag) tag;
-                name = t.getTitle();
-                artist = t.getArtist();
-                album = t.getAlbum();
-                status[0] = true;
-                finished = true;
-                break;
-                } else if (tag instanceof ID3V1Tag) {
-                ID3V1Tag t = (ID3V1Tag) tag;
-                name = t.getTitle();
-                artist = t.getArtist();
-                album = t.getAlbum();
-                status[0] = true;
-                finished = true;
-                break;
-                } else if (status[0] != null) {
-                finished = true;
-                break;
-                }
-            }
+		MediaFile mf = new MP3File(file);
+		ID3Tag[] tags = mf.getTags();
+		for (ID3Tag tag : tags) {
+		    if (tag instanceof ID3V2Tag) {
+			ID3V2Tag t = (ID3V2Tag) tag;
+			name = t.getTitle();
+			artist = t.getArtist();
+			album = t.getAlbum();
+			status[0] = true;
+			finished = true;
+			break;
+		    } else if (tag instanceof ID3V1Tag) {
+			ID3V1Tag t = (ID3V1Tag) tag;
+			name = t.getTitle();
+			artist = t.getArtist();
+			album = t.getAlbum();
+			status[0] = true;
+			finished = true;
+			break;
+		    } else if (status[0] != null) {
+			finished = true;
+			break;
+		    }
+		}
             } catch (ID3Exception e) {
-            /* yep. */
+		/* yep. */
             }
             try {
-            Thread.sleep(100);
+		Thread.sleep(100);
             } catch (Exception e) {
-            /* yep. */
+		/* yep. */
             }
         }
-
-        file.delete();
-
+	
         return new String[] { name, artist, album };
     }
 }

@@ -70,7 +70,7 @@
                 var url = encodeURI(as[0].href);
                 var tds = as[0].tr.getElementsByTagName("td");
                 var td_name = tds[0], td_artist = tds[1], td_album = tds[2];
-                new Ajax.Request("id3", {
+                new Ajax.Request("<c:url value="/id3" />", {
                     parameters: { url: url },
                     onSuccess: function (transport) {
                         var track = transport.responseXML.getElementsByTagName("track")[0];
