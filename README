@@ -1,0 +1,74 @@
+SongCloud: README file
+
+by Dylan Canfield
+on Dec 11, 2010
+
+//////////////
+// Overview //
+//////////////
+
+SongCloud is a webapplication written in java which aims to allow users
+to listen to music served up from their Dropbox accounts.
+
+The sourcecode for SongCloud is freely available at:
+https://github.com/firephreak/Northernmost-Poseidon
+
+/////////////
+// License //
+/////////////
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+////////////////////////
+// Building SongCloud //
+////////////////////////
+
+SongCloud is intended to be built as a maven project. From this directory
+run: 
+'mvn install'
+to compile SongCloud, along with its dependencies, and run all tests.
+
+Note: for all tests to run properly SongCloud must already be running.
+To skip the tests run:
+'mvn install -Dmaven.test.skip=true'
+
+The war you will want to deploy will be located at
+songcloud/target/songcloud.war upon a successfull build.
+
+//////////////////////
+// Acknowledgements //
+//////////////////////
+
+Songcloud depends on the Dropbox Client API libraries for Java.
+We have included a copy for the sole purposes of making SongCloud easy
+to build. This was done without the explicit consent of Dropbox.
+
+Please see https://www.dropbox.com/developers/ for more information.
+
+Songcloud also depends on JID3 which has also been included for ease
+of compilation.
+
+Please see http://jid3.blinkenlights.org/ for more information.
+
+/////////////
+// Authors //
+/////////////
+
+SongCloud was developed by:
+
+Dylan Canfield
+John Foley
+Eric Horacek
+Mantas Prekeris
+Erik Silkensen
