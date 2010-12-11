@@ -1,10 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layout" %>
 
-<head>
-    <link rel="stylesheet" href="<c:url value="/css/songcloud.css"/>"/>
-</head>
-
 <layout:default title="SongCloud" >
     <jsp:attribute name="content">
 

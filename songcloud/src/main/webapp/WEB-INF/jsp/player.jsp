@@ -93,7 +93,7 @@
             var resume_object = document.createElement('a');
             resume_object.setAttribute('id',"resume");
             resume_object.setAttribute('onclick',"control_resume();");
-            resume_object.innerHTML = "<img src='/images/play.png' width='100' height='100' class='center'/>";
+            resume_object.innerHTML = '<img src="<c:url value="/images/play.png "/>" width="100" height="100" class="center"/>';
 
             pause_object.parentNode.replaceChild(resume_object,pause_object);
             audio_object.pause();
@@ -106,7 +106,7 @@
             var pause_object = document.createElement('a');
             pause_object.setAttribute('id',"pause");
             pause_object.setAttribute('onclick',"control_pause();");
-            pause_object.innerHTML = "<img src='/images/pause.png' width='100' height='100' class='center'/>";
+            pause_object.innerHTML = '<img src="<c:url value="/images/pause.png"/>" width="100" height="100" class="center"/>';
 
             if (resume_object != null) resume_object.parentNode.replaceChild(pause_object,resume_object);
             audio_object.play();
@@ -218,9 +218,9 @@
                     <div id="control_box">
                         <!--This is where the controls will go-->
                         <div id="control_swap_holder"></div>
-                        <a id="pause" onclick="control_pause();"> <img src="/images/pause.png" width="100" height="100" class="center"/> </a>
-                        <a id="prev" onclick="control_prev();"> <img src="/images/skip-back.png" width="80" height="80"/> </a>
-                        <a id="next" onclick="control_next();"> <img src="/images/skip-forward.png" width="80" height="80" /> </a>
+                        <a id="pause" onclick="control_pause();"> <img src="<c:url value="/images/pause.png"/>" width="100" height="100" class="center"/> </a>
+                        <a id="prev" onclick="control_prev();"> <img src="<c:url value="/images/skip-back.png"/>" width="80" height="80"/> </a>
+                        <a id="next" onclick="control_next();"> <img src="<c:url value="/images/skip-forward.png"/>" width="80" height="80" /> </a>
                     </div>
                 </div>
                     </div>

@@ -4,6 +4,7 @@ import com.dropbox.client.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import java.io.File;
 
 public class DropboxUtils {
     private static Map config;
@@ -13,7 +14,8 @@ public class DropboxUtils {
 	public static Authenticator getAuthenticator() {
 		if(auth == null) {
 			try {
-				config = Authenticator.loadConfig("config/testing.json");
+				File relative = new File("config/testing.json");
+				config = Authenticator.loadConfig(relative.getAbsolutePath());
 				
 				auth = new Authenticator(config);
 			} catch(Exception e) {
